@@ -1,0 +1,123 @@
+body {
+  background-color: #c2c2c2;
+}
+
+.wrapper {
+  width: 700px;
+  margin: auto;
+}
+
+img {
+  width: 700px;
+  height: 700px;
+  border-radius: 6%;
+  transition: 1s;
+}
+.pictures {
+ overflow: hidden;
+}
+.frame {
+  width: 500%;
+  display: flex;
+}
+.text-and-slides {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.text {
+  overflow: hidden;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.text p {
+  transition: 1s;
+}
+.text-frame{
+  height: 500%;
+}
+input {
+  display: none;
+}
+label {
+  cursor: pointer;
+  padding: 10px;
+}
+.controls {
+ display: flex;
+ align-items: center;
+}
+.button {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #e9e633;
+  transition: 0.5s;
+}
+.button:hover {
+  background-color: #7fe7b8;
+}
+label:hover >div{
+  background-color: #7fe7b8;
+}
+#slide1:checked ~.text-and-slides>.controls>label#first>div {
+  background-color: #403f3f;
+}
+#slide2:checked ~.text-and-slides>.controls>label#second>div {
+  background-color: #403f3f;
+}
+#slide3:checked ~.text-and-slides>.controls>label#third>div {
+  background-color: #403f3f;
+}
+#slide4:checked ~.text-and-slides>.controls>label#forth>div {
+  background-color: #403f3f;
+}
+
+#slide1:checked ~.pictures img:first-child{
+  margin-left: 0;
+}
+#slide2:checked ~.pictures img:first-child{
+  margin-left: -20%;
+}
+#slide3:checked ~.pictures img:first-child{
+  margin-left: -40%;
+}
+#slide4:checked ~.pictures img:first-child{
+  margin-left: -60%;
+}
+
+#slide1:checked ~.text-and-slides p:first-child{
+  margin-top: 1%;
+}
+#slide2:checked ~.text-and-slides p:first-child{
+  margin-top: -10%;
+}
+#slide3:checked ~.text-and-slides p:first-child{
+  margin-top: -22%;
+}
+#slide4:checked ~.text-and-slides p:first-child{
+  margin-top: -35%;
+}
+
+@media (max-width:767px){
+  .wrapper {
+    width: 300px;
+  }
+  .pictures {
+    width: 300px;
+    height: 300px;
+  }
+  img {
+    width: 300px;
+    height: 300px;
+  }
+  .text {
+    font-size: 1rem;
+    height: 2rem;
+  }
+  .button {
+    width: 10px;
+    height: 10px;
+  }
+}
+
