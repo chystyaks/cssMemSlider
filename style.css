@@ -1,55 +1,56 @@
 body {
   background-color: #c2c2c2;
+  -webkit-tap-highlight-color: transparent;
 }
-
+span {
+  display: block;
+}
 .wrapper {
-  width: 700px;
+  width: 50vw;
   margin: auto;
 }
 
 img {
-  width: 700px;
-  height: 700px;
-  border-radius: 6%;
+  width: 50vw;
+  max-height: 80vh;
+  border-radius: 3%;
   transition: 1s;
 }
 .pictures {
  overflow: hidden;
+ margin-bottom: 3vw;
 }
 .frame {
   width: 500%;
   display: flex;
 }
 .text-and-slides {
-  height: 40px;
   display: flex;
   justify-content: space-between;
 }
 .text {
-  overflow: hidden;
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.7vw;
 }
 .text p {
   transition: 1s;
 }
-.text-frame{
-  height: 500%;
-}
+
 input {
   display: none;
 }
 label {
   cursor: pointer;
-  padding: 10px;
+  padding: 1rem;
 }
 .controls {
  display: flex;
  align-items: center;
+ justify-content: center;
 }
 .button {
-  height: 20px;
-  width: 20px;
+  height: 2vw;
+  width: 2vw;
   border-radius: 50%;
   background-color: #e9e633;
   transition: 0.5s;
@@ -57,19 +58,19 @@ label {
 .button:hover {
   background-color: #7fe7b8;
 }
-label:hover >div{
+label:hover >span{
   background-color: #7fe7b8;
 }
-#slide1:checked ~.text-and-slides>.controls>label#first>div {
+#slide1:checked ~.text-and-slides>.controls>label#first>span {
   background-color: #403f3f;
 }
-#slide2:checked ~.text-and-slides>.controls>label#second>div {
+#slide2:checked ~.text-and-slides>.controls>label#second>span {
   background-color: #403f3f;
 }
-#slide3:checked ~.text-and-slides>.controls>label#third>div {
+#slide3:checked ~.text-and-slides>.controls>label#third>span {
   background-color: #403f3f;
 }
-#slide4:checked ~.text-and-slides>.controls>label#forth>div {
+#slide4:checked ~.text-and-slides>.controls>label#forth>span {
   background-color: #403f3f;
 }
 
@@ -86,38 +87,26 @@ label:hover >div{
   margin-left: -60%;
 }
 
-#slide1:checked ~.text-and-slides p:first-child{
-  margin-top: 1%;
+#slide1:checked ~.text-and-slides p:not(:first-child){
+  font-size: 0;
 }
-#slide2:checked ~.text-and-slides p:first-child{
-  margin-top: -10%;
+#slide2:checked ~.text-and-slides p:not(:nth-child(2)){
+  font-size: 0;
 }
-#slide3:checked ~.text-and-slides p:first-child{
-  margin-top: -22%;
+#slide3:checked ~.text-and-slides p:not(:nth-child(3)){
+  font-size: 0;
 }
-#slide4:checked ~.text-and-slides p:first-child{
-  margin-top: -35%;
+#slide4:checked ~.text-and-slides p:not(:nth-child(4)){
+  font-size: 0;
 }
 
 @media (max-width:767px){
-  .wrapper {
-    width: 300px;
+  .text-and-slides {
+    flex-direction: column-reverse;
   }
-  .pictures {
-    width: 300px;
-    height: 300px;
+  label {
+    padding: 0.5rem;
   }
-  img {
-    width: 300px;
-    height: 300px;
-  }
-  .text {
-    font-size: 1rem;
-    height: 2rem;
-  }
-  .button {
-    width: 10px;
-    height: 10px;
-  }
+  
 }
 
