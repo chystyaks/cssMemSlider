@@ -74,6 +74,19 @@ label:hover >span{
   background-color: #403f3f;
 }
 
+#slide1:active ~.text-and-slides>.controls>label#first>span {
+  transform: scale(1.3, 0.2);
+}
+#slide2:active ~.text-and-slides>.controls>label#second>span {
+  transform: scale(1.3, 0.2);
+}
+#slide3:active ~.text-and-slides>.controls>label#third>span {
+  transform: scale(1.3, 0.2);
+}
+#slide4:active ~.text-and-slides>.controls>label#forth>span {
+  transform: scale(1.3, 0.2);
+}
+
 #slide1:checked ~.pictures img:first-child{
   margin-left: 0;
 }
